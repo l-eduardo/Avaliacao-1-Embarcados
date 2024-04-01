@@ -6,7 +6,8 @@ export default function GetAllArtist() {
 
 const dataTextToDate = (data) => {
   for (let item of data) {
-    item.startDate = new Date(item.startDate);
+    console.log(item.startDate)
+    item.startDate = new Date(parseInt(item.startDate));
   }
   return data;
 }

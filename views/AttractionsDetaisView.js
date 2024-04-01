@@ -99,7 +99,7 @@ export default function AttractionsDetailsView({route, navigation}){
         <View style={[styles.detailTextContainer, styles.spacing]}>
           <Text style={styles.font24}>Data do show: </Text>
           <Text style={[styles.detailsText, styles.font24]}>
-            {artist.startDate}
+            {Date.parse(artist.startDate)}
           </Text>
         </View>
         <View style={[styles.detailTextContainer, styles.spacing]}>

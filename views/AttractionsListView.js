@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FlatList, ScrollView, View, StyleSheet, Text, Touchable, TouchableOpacity, Image } from "react-native"
+import GetAllArtist from "../utils/GetArtistsData";
 
 const DATA = GetAllArtist()
 

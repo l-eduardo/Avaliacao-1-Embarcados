@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FlatList, ScrollView, View, StyleSheet, Text, Touchable, TouchableOpacity, Image } from "react-native"
 
-const DATA = require('../assets/attractions.json')
+const DATA = GetAllArtist()
 
 export default function AttractionsListView({ navigation }){
   const Item = ({item}) => ( 

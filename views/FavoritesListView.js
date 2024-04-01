@@ -1,43 +1,29 @@
-import { useState } from "react";
-import { FlatList, ScrollView, View, StyleSheet, Text, Touchable, TouchableOpacity, Image } from "react-native"
+import {useEffect, useState} from "react";
+import {FlatList, View, StyleSheet, Text, TouchableOpacity, Image} from "react-native"
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import GetAllArtist from "../utils/GetArtistsData";
 
-const DATA = require('../assets/attractions.json')
+const DATA = GetAllArtist().sort((a, b) => a.startDate > b.startDate ? 1 : -1);
 
-export default async function AttractionsListView({ navigation }){
+export default function FavoritesListView({navigation}) {
 
-  async function asyncFilter(array, asyncCallback) {
-    const results = await Promise.all(array.map(async artista => {
-      var id = artista.id
-      return {
-        id,
-        passed: await asyncCallback(id)
-      };
-    }));
-  
-    return results.filter(({ passed }) => passed).map(({ item }) => item);
-  }
+  const [favorites, setFavorites] = useState([]);
 
-  const FavoritedItems = async (data) =>
-    {
-      //var filteredData = data.filter(async element => {return await getValueFunction(element.id)});
-      var filteredData = await asyncFilter(data)
-      var agrvais2s2 = data.filter((artista) => {
-        return filteredData.includes((item) => {
-          item.id == '1'
-        })
-      })
-      console.log("FILTERED: " + filteredData)
-      return filteredData
+  useEffect(() => {
+    const fetchData = async () => {
+      let results = [];
+      for (const item of DATA) {
+        let value = await AsyncStorage.getItem(item.id) || '0';
+        if (value === '1') {
+          results.push(item)
+        }
+      }
+      setFavorites(results);
     }
-
-  const getValueFunction = async (id) => {
-    var value = await AsyncStorage.getItem(id);
-    //console.log(value  === '1')
-    return value === '1'
-  };
-
-  const Item = ({item}) => ( 
+    fetchData();
+  }, []);
+  
+  const Item = ({item}) => (
     <TouchableOpacity onPress={() => navigation.navigate("Details", {artist: item})} style={styles.container}>
       <View style={styles.textContainer}>
         <Text style={styles.text}>{item.name}</Text>
@@ -48,8 +34,8 @@ export default async function AttractionsListView({ navigation }){
 
   return (
     <FlatList
-      data={await FavoritedItems(DATA)}
-      renderItem={({item}) => <Item item={item} />}
+      data={favorites}
+      renderItem={({item}) => <Item item={item}/>}
       keyExtractor={item => item.id}
       style={{direction: 'ltr'}}
     />

@@ -14,10 +14,32 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeView} options={{headerShown: false}} />
-        <Stack.Screen name="Atrações" component={AttractionsListView} />
-        <Stack.Screen name="Details" component={AttractionsDetailsView} options={{headerShown: false}} />
-        <Stack.Screen name="Favoritos" component={FavoritesListView} />
+        <Stack.Screen name="Home" component={HomeView} 
+          options={{headerShown: false}} 
+        />
+        <Stack.Screen name="Atrações" component={AttractionsListView} 
+          options={{
+            headerStyle: {
+              backgroundColor: '#94b3c3'
+            }, 
+            headerTitleStyle: {
+              fontWeight: 'bold', color: 'white'
+            }
+          }}
+        />
+        <Stack.Screen name="Details" component={AttractionsDetailsView} 
+          options={{headerShown: false}} 
+        />
+        <Stack.Screen name="Favoritos" component={FavoritesListView}  
+          options={{
+            headerStyle: {
+              backgroundColor: '#94b3c3'
+            }, 
+            headerTitleStyle: {
+              fontWeight: 'bold', color: 'white'
+            }
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

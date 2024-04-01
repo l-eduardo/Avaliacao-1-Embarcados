@@ -33,6 +33,10 @@ export default function AttractionsDetailsView({route}){
     Linking.openURL(artist.principalTrackUrl)
   }
   const [switchValue, setSwitchValue] = useState(false);
+
+  const handleTicketClick = () => {
+    Linking.openURL(artist.ticketSellUrl)
+  }
   
   useEffect(() => {
     async function obterEstadoInicial() {
@@ -41,6 +45,10 @@ export default function AttractionsDetailsView({route}){
     }
     obterEstadoInicial()
   })
+
+  const dateFormat = () => {
+    return new Date(parseInt(artist.showDate)).toLocaleDateString('pt-BR', { hour:'numeric', minute:'numeric', second:'numeric', hour12:false })
+  }
 
   const favoriteSwitchChange = async () => {
     saveValueFunction(!(await getValueFunction()))
@@ -58,7 +66,7 @@ export default function AttractionsDetailsView({route}){
 
   return (
     <ScrollView style={styles.scrollView}>
-      <Image source={{uri: artist.imagePath}} style={{ width: 400, height: 300 }}/>
+      <Image source={{uri: artist.imagePath}} style={styles.image}/>
 
       <View style={styles.container}>
         <View>
@@ -94,14 +102,24 @@ export default function AttractionsDetailsView({route}){
         <View style={[styles.detailTextContainer, styles.spacing]}>
           <Text style={styles.font24}>Data do show: </Text>
           <Text style={[styles.detailsText, styles.font24]}>
-            {artist.startDate}
+            {dateFormat()}
           </Text>
         </View>
+        <TouchableOpacity onPress={handleTicketClick} style={styles.spacing}>
+          <View style={styles.detailTextContainer}>
+            <Text style={styles.font24}>
+              Ingresso:
+            </Text>
+            <Text style={styles.font24}>
+              {artist.ticketPrice}
+            </Text>
+          </View>
+        </TouchableOpacity>
         <View style={[styles.detailTextContainer, styles.spacing]}>
           <Text style={styles.font24}>Favorite: </Text>
           <Switch
-          trackColor={{false: '#767577', true: '#81b0ff'}}
-          thumbColor={switchValue ? '#f5dd4b' : '#f4f3f4'}
+          trackColor={{false: '#767577', true: '#94b3c3'}}
+          thumbColor={switchValue ? '#DDAA00' : '#f4f3f4'}
           ios_backgroundColor="#3e3e3e"
           onValueChange={favoriteSwitchChange}
           value={switchValue}
@@ -119,8 +137,11 @@ const styles = StyleSheet.create({
     margin: 10,
     justifyContent: 'center',
   },
+  image: {
+    height: 300,
+  },
   scrollView: {
-    backgroundColor: '#eee',
+    backgroundColor: '#3e3e42',
   },
   textView: {
     width: '100%',
@@ -130,6 +151,8 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontSize: 48,
+    color: 'white',
+    fontWeight: 'bold'
   },
   detailTextContainer: {
     flexDirection: 'row',
@@ -140,8 +163,10 @@ const styles = StyleSheet.create({
   detailsText: {
     fontSize: 12,
     textAlign: 'center',
+    color: 'white',
   },
   font24: {
+    color: 'white',
     fontSize: 18,
   },
   spacing: {

@@ -1,41 +1,80 @@
 [
   {
-    "id": "a3e41b09-e652-4349-a3a1-57a5fe70ec01",
+    "id": "0",
     "name": "Sam Smith",
     "address": "Avenida Senador Teotônio Vilela, 261",
-    "startDate": "1723747230000",
+    "showDate": "1722621600000",
     "imagePath": "https://s.yimg.com/ny/api/res/1.2/WH6sdzwRRnOlCPpaLD.htw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://media.zenfs.com/en/billboard_547/5a63c08c1f45f00d2395043752251069",
-    "videoUrl": "youtube.com",
     "socialMedia": "https://www.instagram.com/samsmith/",
     "phone": "+55 48 9 9999-9999",
     "principalTrack": "Unholy",
     "principalTrackUrl": "https://www.youtube.com/watch?v=Uq9gPaIzbe8&ab_channel=SamSmithVEVO",
-    "isFavorite": false
+    "ticketSellUrl": "https://www.ticketmaster.com.br/event/lollapaloozabr-bradesco",
+    "ticketPrice": "R$550,00 (Meia) - R$1100,00 (Int.)"
   },
   {
     "id": "1",
     "name": "Of Monster and Men",
     "address": "Avenida Senador Teotônio Vilela, 261",
-    "startDate": "1723747230000",
+    "showDate": "1722549600000",
     "imagePath": "https://www.tenhomaisdiscosqueamigos.com/wp-content/uploads/2014/07/of-monsters-and-men.jpg",
-    "videoUrl": "youtube.com",
-    "socialMedia": "",
+    "socialMedia": "https://www.instagram.com/ofmonstersandmen/",
     "phone": "+55 48 9 9999-9999",
     "principalTrack": "Dirty Paws",
     "principalTrackUrl": "https://www.youtube.com/watch?v=mCHUw7ACS8o&ab_channel=OfMonstersAndMenVEVO",
-    "isFavorite": false
+    "ticketSellUrl": "https://www.ticketmaster.com.br/event/lollapaloozabr-bradesco",
+    "ticketPrice": "R$550,00 (Meia) - R$1100,00 (Int.)"
   },
   {
     "id": "2",
     "name": "MC Floripa",
     "address": "Avenida Senador Teotônio Vilela, 261",
-    "startDate": "1723750830000",
+    "showDate": "1722542400000",
     "imagePath": "https://i.ytimg.com/vi/x71rES_e7S8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAzRE5TR6TDV3LclHdcgmDbPxzIaw",
-    "videoUrl": "youtube.com",
     "socialMedia": "https://www.instagram.com/mc.floripa/",
     "phone": "+55 48 9 9999-9999",
     "principalTrack": "Maior que eu so a girafa",
     "principalTrackUrl": "https://www.youtube.com/watch?v=x71rES_e7S8&ab_channel=CR7Monstro",
-    "isFavorite": true
+    "ticketSellUrl": "https://www.ticketmaster.com.br/event/lollapaloozabr-bradesco",
+    "ticketPrice": "R$550,00 (Meia) - R$1100,00 (Int.)"
+  },
+  {
+    "id": "3",
+    "name": "SZA",
+    "address": "Avenida Senador Teotônio Vilela, 261",
+    "showDate": "1722628800000",
+    "imagePath": "https://i.scdn.co/image/ab67616d0000b273cdf4c84cb9b81c10e859bb97",
+    "socialMedia": "https://www.instagram.com/sza/",
+    "phone": "+55 48 9 9999-9999",
+    "principalTrack": "Kill Bill",
+    "principalTrackUrl": "https://www.youtube.com/watch?v=MSRcC626prw",
+    "ticketSellUrl": "https://www.ticketmaster.com.br/event/lollapaloozabr-bradesco",
+    "ticketPrice": "R$550,00 (Meia) - R$1100,00 (Int.)"
+  },
+  {
+    "id": "4",
+    "name": "Kings Of Leon",
+    "address": "Avenida Senador Teotônio Vilela, 261",
+    "showDate": "1722636000000",
+    "imagePath": "https://www.voudegrade.com.br/wp-content/uploads/2024/02/Kings-of-Leon-scaled-1.jpg",
+    "socialMedia": "https://www.instagram.com/kingsofleon/",
+    "phone": "+55 48 9 9999-9999",
+    "principalTrack": "Use Somebody",
+    "principalTrackUrl": "https://www.youtube.com/watch?v=gnhXHvRoUd0&list=PLgKXjSNrva9SzsxN79TH9SeIgTOXXFH4M&index=1",
+    "ticketSellUrl": "https://www.ticketmaster.com.br/event/lollapaloozabr-bradesco",
+    "ticketPrice": "R$550,00 (Meia) - R$1100,00 (Int.)"
+  },
+  {
+    "id": "5",
+    "name": "Thirty Seconds to Mars",
+    "address": "Avenida Senador Teotônio Vilela, 261",
+    "showDate": "1722535200000",
+    "imagePath": "https://d3nxoulyw7bc8u.cloudfront.net/images/artists/None/dab60372-6355-4805-9e21-55c7e0fef1f2.jpg",
+    "socialMedia": "https://www.instagram.com/30secondstomars/",
+    "phone": "+55 48 9 9999-9999",
+    "principalTrack": "The Kill",
+    "principalTrackUrl": "https://www.youtube.com/watch?v=8yvGCAvOAfM",
+    "ticketSellUrl": "https://www.ticketmaster.com.br/event/lollapaloozabr-bradesco",
+    "ticketPrice": "R$550,00 (Meia) - R$1100,00 (Int.)"
   }
 ]

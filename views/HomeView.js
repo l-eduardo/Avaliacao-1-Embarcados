@@ -22,7 +22,7 @@ export default function HomeView({navigation}) {
             color={styles.buttons.color}
             onPress={() => navigation.navigate("Favoritos")}
             />
-      </View>
+          </View>
         </ImageBackground>
     </View>
   );

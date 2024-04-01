@@ -27,18 +27,21 @@ export default function FavoritesListView({navigation}) {
     <TouchableOpacity onPress={() => navigation.navigate("Details", {artist: item})} style={styles.container}>
       <View style={styles.textContainer}>
         <Text style={styles.text}>{item.name}</Text>
+        <Text style={styles.addressText}>{item.address}</Text>
       </View>
       <Image source={{uri: item.imagePath}} style={styles.image}/>
     </TouchableOpacity>
   );
 
   return (
-    <FlatList
-      data={favorites}
-      renderItem={({item}) => <Item item={item}/>}
-      keyExtractor={item => item.id}
-      style={{direction: 'ltr'}}
-    />
+    <View style={styles.backgroundContainer}>
+      <FlatList
+        data={favorites}
+        renderItem={({item}) => <Item item={item}/>}
+        keyExtractor={item => item.id}
+        style={{direction: 'ltr'}}
+      />
+    </View>
   );
 }
 
@@ -46,10 +49,14 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#DDAA00',
     marginTop: 25,
     marginHorizontal: 20,
     borderRadius: 20,
+  },
+  backgroundContainer: {
+    flex: 1,
+    backgroundColor: '#94b3c3'
   },
   textContainer: {
     flex: 1,
@@ -59,7 +66,13 @@ const styles = StyleSheet.create({
   text: {
     margin: 20,
     fontSize: 24,
-    color: 'black',
+    color: 'white',
+    fontWeight: 'bold'
+  },
+  addressText: {
+    color: 'white',
+    fontSize: 10,
+    marginLeft: 20
   },
   image: {
     width: 90,

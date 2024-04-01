@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import {Image, Linking, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View, Switch} from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function AttractionsDetailsView({route, navigation}){
+export default function AttractionsDetailsView({route}){
 
   const {artist} = route.params
 
@@ -32,17 +32,12 @@ export default function AttractionsDetailsView({route, navigation}){
   const handlePrincipalTrackClick = () => {
     Linking.openURL(artist.principalTrackUrl)
   }
-  
-  const artistTimestampDateConverter = () => {
-    return new Date(artist.startDate).toLocaleDateString('pt-BR')
-  }
-
   const [switchValue, setSwitchValue] = useState(false);
   
   useEffect(() => {
     async function obterEstadoInicial() {
       const valorArmazenado = await AsyncStorage.getItem(artist.id);
-      setSwitchValue(parseInt(valorArmazenado) == '1')
+      setSwitchValue(parseInt(valorArmazenado) === 1)
     }
     obterEstadoInicial()
   })
@@ -57,8 +52,8 @@ export default function AttractionsDetailsView({route, navigation}){
   };
 
   const getValueFunction = async () => {
-    var value = await AsyncStorage.getItem(artist.id);
-    return parseInt(value) == '1'
+    let value = await AsyncStorage.getItem(artist.id);
+    return parseInt(value) === 1
   };
 
   return (
@@ -99,7 +94,7 @@ export default function AttractionsDetailsView({route, navigation}){
         <View style={[styles.detailTextContainer, styles.spacing]}>
           <Text style={styles.font24}>Data do show: </Text>
           <Text style={[styles.detailsText, styles.font24]}>
-            {Date.parse(artist.startDate)}
+            {artist.startDate}
           </Text>
         </View>
         <View style={[styles.detailTextContainer, styles.spacing]}>

@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
 import {FlatList, View, StyleSheet, Text, TouchableOpacity, Image} from "react-native"
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import GetAllArtist from "../utils/GetArtistsData";
+import {GetAllArtist} from "../utils/GetArtistsData";
 
-const DATA = GetAllArtist().sort((a, b) => a.startDate > b.startDate ? 1 : -1);
+const DATA = GetAllArtist();
 
 export default function FavoritesListView({navigation}) {
 

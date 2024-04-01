@@ -5,8 +5,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AttractionsListView from './views/AttractionsListView';
 import AttractionsDetailsView from './views/AttractionsDetaisView';
 import FavoritesListView from './views/FavoritesListView';
+import {loadData} from "./utils/GetArtistsData";
 
 const Stack = createNativeStackNavigator();
+loadData();
 
 export default function App() {
   return (

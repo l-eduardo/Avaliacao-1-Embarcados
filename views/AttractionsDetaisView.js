@@ -1,6 +1,9 @@
+import {useState, useEffect} from "react";
 import {Image, Linking, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View, Switch} from "react-native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function AttractionsDetailsView({route, navigation}){
+
   const {artist} = route.params
 
   const handlePhoneClick = () => {
@@ -29,6 +32,34 @@ export default function AttractionsDetailsView({route, navigation}){
   const handlePrincipalTrackClick = () => {
     Linking.openURL(artist.principalTrackUrl)
   }
+  
+  const artistTimestampDateConverter = () => {
+    return new Date(artist.startDate).toLocaleDateString('pt-BR')
+  }
+
+  const [switchValue, setSwitchValue] = useState(false);
+  
+  useEffect(() => {
+    async function obterEstadoInicial() {
+      const valorArmazenado = await AsyncStorage.getItem(artist.id);
+      setSwitchValue(parseInt(valorArmazenado) == '1')
+    }
+    obterEstadoInicial()
+  })
+
+  const favoriteSwitchChange = async () => {
+    saveValueFunction(!(await getValueFunction()))
+    setSwitchValue(await getValueFunction())
+  }
+
+  const saveValueFunction = async (newFavoriteState) => {
+    await AsyncStorage.setItem(artist.id, newFavoriteState ? '1' : '0');
+  };
+
+  const getValueFunction = async () => {
+    var value = await AsyncStorage.getItem(artist.id);
+    return parseInt(value) == '1'
+  };
 
   return (
     <ScrollView style={styles.scrollView}>
@@ -70,6 +101,16 @@ export default function AttractionsDetailsView({route, navigation}){
           <Text style={[styles.detailsText, styles.font24]}>
             {artist.startDate}
           </Text>
+        </View>
+        <View style={[styles.detailTextContainer, styles.spacing]}>
+          <Text style={styles.font24}>Favorite: </Text>
+          <Switch
+          trackColor={{false: '#767577', true: '#81b0ff'}}
+          thumbColor={switchValue ? '#f5dd4b' : '#f4f3f4'}
+          ios_backgroundColor="#3e3e3e"
+          onValueChange={favoriteSwitchChange}
+          value={switchValue}
+          />
         </View>
       </View>
     </ScrollView>

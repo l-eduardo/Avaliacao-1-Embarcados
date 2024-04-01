@@ -12,7 +12,7 @@ export default function HomeView({navigation}) {
               style={styles.buttons}
               title="Atrações"
               color={styles.buttons.color}
-              onPress={() => navigation.navigate("Atracoes")}
+              onPress={() => navigation.navigate("Atrações")}
             />
           </View>
           <View style={styles.buttonsContainers}>
@@ -20,6 +20,7 @@ export default function HomeView({navigation}) {
             style={styles.buttons}
             title="Favoritos"
             color={styles.buttons.color}
+            onPress={() => navigation.navigate("Favoritos")}
             />
       </View>
         </ImageBackground>

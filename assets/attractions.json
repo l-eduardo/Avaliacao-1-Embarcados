@@ -10,7 +10,7 @@
     "phone": "+55 48 9 9999-9999",
     "principalTrack": "Unholy",
     "principalTrackUrl": "https://www.youtube.com/watch?v=Uq9gPaIzbe8&ab_channel=SamSmithVEVO",
-    "isFavorite": "false"
+    "isFavorite": false
   },
   {
     "id": "1",
@@ -23,7 +23,7 @@
     "phone": "+55 48 9 9999-9999",
     "principalTrack": "Dirty Paws",
     "principalTrackUrl": "https://www.youtube.com/watch?v=mCHUw7ACS8o&ab_channel=OfMonstersAndMenVEVO",
-    "isFavorite": "false"
+    "isFavorite": false
   },
   {
     "id": "2",
@@ -36,6 +36,6 @@
     "phone": "+55 48 9 9999-9999",
     "principalTrack": "Maior que eu so a girafa",
     "principalTrackUrl": "https://www.youtube.com/watch?v=x71rES_e7S8&ab_channel=CR7Monstro",
-    "isFavorite": "false"
+    "isFavorite": true
   }
 ]

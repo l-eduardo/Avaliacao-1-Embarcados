@@ -9,7 +9,8 @@
     "socialMedia": "https://www.instagram.com/samsmith/",
     "phone": "+55 48 9 9999-9999",
     "principalTrack": "Unholy",
-    "principalTrackUrl": "https://www.youtube.com/watch?v=Uq9gPaIzbe8&ab_channel=SamSmithVEVO"
+    "principalTrackUrl": "https://www.youtube.com/watch?v=Uq9gPaIzbe8&ab_channel=SamSmithVEVO",
+    "isFavorite": "false"
   },
   {
     "id": "1",
@@ -21,7 +22,8 @@
     "socialMedia": "",
     "phone": "+55 48 9 9999-9999",
     "principalTrack": "Dirty Paws",
-    "principalTrackUrl": "https://www.youtube.com/watch?v=mCHUw7ACS8o&ab_channel=OfMonstersAndMenVEVO"
+    "principalTrackUrl": "https://www.youtube.com/watch?v=mCHUw7ACS8o&ab_channel=OfMonstersAndMenVEVO",
+    "isFavorite": "false"
   },
   {
     "id": "2",
@@ -33,6 +35,7 @@
     "socialMedia": "https://www.instagram.com/mc.floripa/",
     "phone": "+55 48 9 9999-9999",
     "principalTrack": "Maior que eu so a girafa",
-    "principalTrackUrl": "https://www.youtube.com/watch?v=x71rES_e7S8&ab_channel=CR7Monstro"
+    "principalTrackUrl": "https://www.youtube.com/watch?v=x71rES_e7S8&ab_channel=CR7Monstro",
+    "isFavorite": "false"
   }
 ]

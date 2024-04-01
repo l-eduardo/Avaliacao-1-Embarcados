@@ -1,8 +1,8 @@
-import {Image, Linking, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {Image, Linking, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View, Switch} from "react-native";
 
 export default function AttractionsDetailsView({route, navigation}){
   const {artist} = route.params
-  
+
   const handlePhoneClick = () => {
     Linking.openURL(`tel:${artist.phone}`)
   }
@@ -28,10 +28,6 @@ export default function AttractionsDetailsView({route, navigation}){
 
   const handlePrincipalTrackClick = () => {
     Linking.openURL(artist.principalTrackUrl)
-  }
-  
-  const artistTimestampDateConverter = () => {
-    return new Date(artist.startDate).toLocaleDateString('pt-BR')
   }
 
   return (
